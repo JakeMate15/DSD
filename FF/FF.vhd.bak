@@ -1,0 +1,9 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.all;
+
+entity ff is
+	port(
+			clk: in std_logic;
+			clk_out: inout std_logic;
+	);

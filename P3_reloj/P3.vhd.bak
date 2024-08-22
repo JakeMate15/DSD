@@ -1,0 +1,82 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+
+ENTITY P2_1 IS
+
+PORT (CLK,CLR:IN STD_LOGIC;
+      CONTROL: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+        RELOJ, SALIDA: INOUT STD_LOGIC
+        );        
+END ENTITY;
+
+ARCHITECTURE A_P2_1 OF P2_1 IS
+
+SIGNAL DIVISOR:INTEGER;
+SIGNAL CONTADOR: INTEGER;
+
+BEGIN
+
+PROCESS (CONTROL)
+--VARIABLE DIVISOR:INTEGER;
+BEGIN
+CASE CONTROL IS
+
+WHEN "00" =>  DIVISOR<= 50000000;
+WHEN "01" =>  DIVISOR<= 25000000;
+WHEN "10" =>  DIVISOR<= 50000;
+WHEN OTHERS => DIVISOR<=R 5000000;
+
+END CASE;
+END PROCESS;
+
+PROCESS (CLR, CLK, CONTADOR, DIVISOR)
+--VARIABLE DIVISOR:INTEGER;
+BEGIN
+
+IF (CLR='0') THEN
+
+SALIDA<='0';
+
+ELSIF (CLK'EVENT AND CLK='1') THEN
+             IF (CONTADOR = DIVISOR) THEN
+                 SALIDA<= NOT SALIDA;
+                 CONTADOR<=0;
+                 ELSE
+                 CONTADOR<= CONTADOR + 1;
+                 END IF;
+END IF;
+               
+--WHEN OTHERS =>  
+         --    IF (COUNT2 < DOS) THEN
+                -- COUNT2<= COUNT2 + 1;
+                 --ELSE
+                 --CLK2<= NOT CLK2;
+                 --COUNT2<=0;
+                 --END IF;
+                 --CLK1<='0';
+--WHEN OTHERS =>  
+         --    IF (COUNT3 < TRES) THEN
+            --     COUNT3<= COUNT3 + 1;
+            --     ELSE
+            --     CLK3<= NOT CLK3;
+            --     COUNT3<=0;
+            --     END IF;
+--WHEN OTHERS =>  
+           --  IF (COUNT4 < CUATRO) THEN
+                -- COUNT4<= COUNT4 + 1;
+                -- ELSE
+                -- CLK4<= NOT CLK4;
+                -- COUNT4<=0;
+                -- END IF;
+--END CASE;
+
+--END IF;
+
+END PROCESS;
+
+RELOJ<= CLK;
+
+END A_P2_1;

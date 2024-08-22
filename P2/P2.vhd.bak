@@ -1,0 +1,14 @@
+ARCHITECTURE Behavioral OF P2 IS
+BEGIN
+    PROCESS (CLK, CLR, PRE)
+    BEGIN
+        IF CLR = '0' THEN
+            Q <= '0'; NQ <= '1';
+        ELSIF PRE = '0' THEN
+            Q <= '1'; NQ <= '0';
+        ELSIF rising_edge(CLK) THEN
+            Q <= D;
+            NQ <= NOT D;
+        END IF;
+    END PROCESS;
+END Behavioral;

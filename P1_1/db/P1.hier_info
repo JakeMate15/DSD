@@ -1,0 +1,35 @@
+|P1
+anodes[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+anodes[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+anodes[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+anodes[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+clk => digit_number[0].CLK
+clk => digit_number[1].CLK
+clk => digit_number[2].CLK
+clk => clk_counter[0].CLK
+clk => clk_counter[1].CLK
+clk => clk_counter[2].CLK
+clk => clk_counter[3].CLK
+clk => clk_counter[4].CLK
+clk => clk_counter[5].CLK
+clk => clk_counter[6].CLK
+clk => clk_counter[7].CLK
+clk => clk_counter[8].CLK
+clk => clk_counter[9].CLK
+clk => clk_counter[10].CLK
+clk => clk_counter[11].CLK
+clk => clk_counter[12].CLK
+clk => clk_counter[13].CLK
+clk => clk_counter[14].CLK
+clk => clk_counter[15].CLK
+clk => clk_counter[16].CLK
+cathods[0] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
+cathods[1] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+cathods[2] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+cathods[3] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+cathods[4] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+cathods[5] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+cathods[6] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+cathods[7] <= <VCC>
+
+

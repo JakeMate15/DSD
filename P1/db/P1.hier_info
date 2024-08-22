@@ -1,0 +1,31 @@
+|P1
+A[0] => Mux1.IN0
+A[1] => Mux0.IN0
+B[0] => Mux1.IN1
+B[1] => Mux0.IN1
+C[0] => Mux1.IN2
+C[1] => Mux0.IN2
+D[0] => Mux1.IN3
+D[1] => Mux0.IN3
+REF[0] => LessThan0.IN2
+REF[0] => LessThan1.IN2
+REF[1] => LessThan0.IN1
+REF[1] => LessThan1.IN1
+SEL[0] => Mux0.IN5
+SEL[0] => Mux1.IN5
+SEL[1] => Mux0.IN4
+SEL[1] => Mux1.IN4
+DIG1 <= <VCC>
+DIG2 <= <GND>
+DIG3 <= <VCC>
+DIG4 <= <VCC>
+SEG[0] <= SEG.DB_MAX_OUTPUT_PORT_TYPE
+SEG[1] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+SEG[2] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+SEG[3] <= SEG.DB_MAX_OUTPUT_PORT_TYPE
+SEG[4] <= SEG.DB_MAX_OUTPUT_PORT_TYPE
+SEG[5] <= SEG.DB_MAX_OUTPUT_PORT_TYPE
+SEG[6] <= <VCC>
+SEG[7] <= <VCC>
+
+

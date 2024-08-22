@@ -1,0 +1,43 @@
+|P4
+clk => clkout.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+clk => count[20].CLK
+clk => count[21].CLK
+clk => count[22].CLK
+clk => count[23].CLK
+clk => count[24].CLK
+clk => count[25].CLK
+cnt => contadorS[3].ENA
+cnt => contadorS[2].ENA
+cnt => contadorS[1].ENA
+cnt => contadorS[0].ENA
+clr => contadorS[0].ACLR
+clr => contadorS[1].ACLR
+clr => contadorS[2].ACLR
+clr => contadorS[3].ACLR
+contador[0] <> contador[0]
+contador[1] <> contador[1]
+contador[2] <> contador[2]
+contador[3] <> contador[3]
+aux <> <UNC>
+
+

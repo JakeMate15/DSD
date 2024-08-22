@@ -1,0 +1,35 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL; -- Para operaciones aritméticas
+
+entity EncendidoPorFlanco is
+    Port (
+        CLKIN : in STD_LOGIC;
+        SALIDA : out STD_LOGIC
+    );
+end EncendidoPorFlanco;
+
+architecture Behavioral of EncendidoPorFlanco is
+    signal CONTADOR: INTEGER := 0;
+    constant DIVISOR: INTEGER := 50000; -- Ajusta este valor según necesites
+    signal TEMP_SALIDA: STD_LOGIC := '0';
+begin
+
+    RELOJ: PROCESS (CLKIN)
+    begin
+        if rising_edge(CLKIN) then
+            -- Aquí se podría ajustar la lógica si se necesita un divisor específico
+            TEMP_SALIDA <= '1'; -- Activa la salida en el flanco de subida
+        end if;
+    end PROCESS RELOJ;
+    
+    -- Este proceso se asegura de que SALIDA solo se active por un ciclo de reloj
+    PROCESO_SALIDA: PROCESS(CLKIN)
+    begin
+        if rising_edge(CLKIN) then
+            SALIDA <= TEMP_SALIDA;
+            TEMP_SALIDA <= '0'; -- Resetea la señal después de un ciclo
+        end if;
+    end PROCESS PROCESO_SALIDA;
+
+end Behavioral;

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Jun  7 15:17:07 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : P9
+Top-level Entity Name : P9
+Family : Cyclone IV E
+Total logic elements : 59
+    Total combinational functions : 56
+    Dedicated logic registers : 46
+Total registers : 46
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 1,792
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

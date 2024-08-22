@@ -1,0 +1,21 @@
+library ieee;
+use ieee. std_logic_1164.all;
+use ieee. std_logic_arith.all;
+use ieee. std_logic_unsigned.all;
+
+entity P6 is
+	port(
+		clk: in std_logic;
+		selector: out std_logic;
+		display: inout std_logic_vector(7 downto 0);
+	);
+end P6;
+
+architecture P6_A of P6 is
+	constant h: std_logic_vector(7 downto 0) := "10001001";
+	constant o: std_logic_vector(7 downto 0) := "11000000";
+	constant l: std_logic_vector(7 downto 0) := "11000111";
+	constant a: std_logic_vector(7 downto 0) := "10001000";
+	constant ap: std_logic_vector(7 downto 0) := "11111111";
+
+end P6_A;

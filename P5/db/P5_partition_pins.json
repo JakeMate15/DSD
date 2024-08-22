@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "aux[0]",
+					"strict" : false
+				},
+				{
+					"name" : "aux[1]",
+					"strict" : false
+				},
+				{
+					"name" : "aux[2]",
+					"strict" : false
+				},
+				{
+					"name" : "aux[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display[7]",
+					"strict" : false
+				},
+				{
+					"name" : "display[8]",
+					"strict" : false
+				},
+				{
+					"name" : "display[9]",
+					"strict" : false
+				},
+				{
+					"name" : "display[10]",
+					"strict" : false
+				},
+				{
+					"name" : "prioridad[9]",
+					"strict" : false
+				},
+				{
+					"name" : "prioridad[7]",
+					"strict" : false
+				},
+				{
+					"name" : "prioridad[5]",
+					"strict" : false
+				},
+				{
+					"name" : "prioridad[6]",
+					"strict" : false
+				},
+				{
+					"name" : "prioridad[8]",
+					"strict" : false
+				},
+				{
+					"name" : "prioridad[3]",
+					"strict" : false
+				},
+				{
+					"name" : "prioridad[1]",
+					"strict" : false
+				},
+				{
+					"name" : "prioridad[2]",
+					"strict" : false
+				},
+				{
+					"name" : "prioridad[4]",
+					"strict" : false
+				},
+				{
+					"name" : "control[1]",
+					"strict" : false
+				},
+				{
+					"name" : "control[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clr",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

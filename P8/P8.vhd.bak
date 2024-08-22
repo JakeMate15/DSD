@@ -1,0 +1,98 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity P8 is
+	port(
+		esd, esi, clr, reloj: in std_logic;
+		cnt: in std_logic_vector(1 downto 0);
+		ep: in std_logic_vector(4 downto 0);
+		q: inout std_logic_vector(4 downto 0))
+	)
+end P8;
+
+architecture A_P8 of P8 is
+	signal clk: std_logic := '0'; 
+	constant divisor: integer := 25000000;
+	signal contador: integer := 0;
+
+	signal d: std_logic_vector(4 downto 0);
+	
+	begin
+		process (reloj)
+		begin
+			if rising_edge(reloj) THEN
+				if contador >= divisor THEN
+					clk <= NOT clk;
+					contador <= 0;
+				else 
+					contador <= contador + 1;
+				end if;
+			end if;
+		end process;
+	
+	
+	
+		mux0: process(cnt)
+		begin
+			case cnt is
+				when "00" => d(0) <= ep(0);
+				when "01" => d(0) <= esd;
+				when "10" => d(0) <= q(1);
+				when others => d(0) <= q(0);
+			end case;
+		end process mux0;
+		
+		
+		mux1: Processs(cnt)
+		begin
+			case cnt is
+				when "00" => d(1) <= ep(1);
+				when "01" => d(1) <= esd;
+				when "10" => d(1) <= q(2);
+				when others => d(1) <= q(1);
+			end case;
+		end process mux1;
+		
+		
+		mux2: Processs(cnt)
+		begin
+			case cnt is
+				when "00" => d(2) <= ep(2);
+				when "01" => d(2) <= esd;
+				when "10" => d(2) <= q(3);
+				when others => d(2) <= q(2);
+			end case;
+		end process mux2;
+		
+		
+		mux3: Processs(cnt)
+		begin
+			case cnt is
+				when "00" => d(3) <= ep(3);
+				when "01" => d(3) <= esd;
+				when "10" => d(3) <= q(4);
+				when others => d(3) <= q(3);
+			end case;
+		end process mux3;
+		
+		
+		mux4: Processs(cnt)
+		begin
+			case cnt is
+				when "00" => d(4) <= ep(4);
+				when "01" => d(4) <= esd;
+				when "10" => d(4) <= q(0);
+				when others => d(4) <= q(4);
+			end case;
+		end process mux4;
+		
+		
+		ff: process (d, q, clr, clk)
+		begin
+			q(0) = (d(0) and (not q(0))) or (d(0) and q(0));
+			q(1) = (d(1) and (not q(1))) or (d(1) and q(1));
+			q(2) = (d(2) and (not q(2))) or (d(2) and q(2));
+			q(3) = (d(3) and (not q(3))) or (d(3) and q(3));
+			q(4) = (d(4) and (not q(4))) or (d(4) and q(4));
+		end process ff;
+		

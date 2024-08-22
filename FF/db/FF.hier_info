@@ -1,0 +1,45 @@
+|FF
+clk => contador[0].CLK
+clk => contador[1].CLK
+clk => contador[2].CLK
+clk => contador[3].CLK
+clk => contador[4].CLK
+clk => contador[5].CLK
+clk => contador[6].CLK
+clk => contador[7].CLK
+clk => contador[8].CLK
+clk => contador[9].CLK
+clk => contador[10].CLK
+clk => contador[11].CLK
+clk => contador[12].CLK
+clk => contador[13].CLK
+clk => contador[14].CLK
+clk => contador[15].CLK
+clk => contador[16].CLK
+clk => contador[17].CLK
+clk => contador[18].CLK
+clk => contador[19].CLK
+clk => contador[20].CLK
+clk => contador[21].CLK
+clk => contador[22].CLK
+clk => contador[23].CLK
+clk => contador[24].CLK
+clk => contador[25].CLK
+clk => contador[26].CLK
+clk => contador[27].CLK
+clk => contador[28].CLK
+clk => contador[29].CLK
+clk => contador[30].CLK
+clk => contador[31].CLK
+clk => clk_out~reg0.CLK
+clr => nq~reg0.PRESET
+clr => q~reg0.ACLR
+pre => ~NO_FANOUT~
+s => ~NO_FANOUT~
+r => ~NO_FANOUT~
+q <> q~reg0
+nq <> nq~reg0
+clk_out <> clk_out~reg0
+aux <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+

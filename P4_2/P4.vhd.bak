@@ -1,0 +1,55 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
+ENTITY P4 IS
+    PORT(
+        clk, cnt, clr: IN STD_LOGIC;
+        clkout: OUT STD_LOGIC;
+        contador: OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        aux: OUT STD_LOGIC
+    );
+END ENTITY P4;
+
+ARCHITECTURE A_P4 OF P4 IS
+    SIGNAL divisor: INTEGER := 50000000;
+    SIGNAL contadorI: INTEGER := 0;
+BEGIN
+    -- Proceso para generar clkout, el reloj dividido
+    process (clk)
+    BEGIN
+        IF rising_edge(clk) THEN
+            IF contadorI >= divisor THEN
+                clkout <= NOT clkout;
+                contadorI <= 0;
+            ELSE 
+                contadorI <= contadorI + 1;
+            END IF;
+        END IF;
+    END PROCESS;
+    
+    -- Proceso para el contador, utilizando flip-flops JK con las ecuaciones características
+    process (clkout, clr)
+    BEGIN
+        aux <= cnt; -- Simplemente refleja cnt; su uso depende de la implementación específica.
+        
+        IF clr = '1' THEN
+            contador <= "000"; -- Resetea el contador
+        ELSIF rising_edge(clkout) THEN
+            IF cnt = '0' THEN -- El contador solo avanza cuando cnt es '0'.
+                -- Flip-Flop JK para Q0 (bit menos significativo)
+                contador(0) <= NOT contador(0); -- Q0 siempre hace toggle.
+                
+                -- Flip-Flop JK para Q1
+                IF contador(0) = '1' THEN
+                    contador(1) <= NOT contador(1); -- Q1 hace toggle cuando Q0 es '1'.
+                END IF;
+                
+                -- Flip-Flop JK para Q2 (bit más significativo)
+                IF contador(0) = '1' AND contador(1) = '1' THEN
+                    contador(2) <= NOT contador(2); -- Q2 hace toggle cuando Q0 y Q1 son '1'.
+                END IF;
+            END IF;
+        END IF;
+    END PROCESS;
+END ARCHITECTURE A_P4;

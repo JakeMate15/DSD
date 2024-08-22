@@ -1,0 +1,6 @@
+|Re
+CLKIN => next_salida.CLK
+CLKIN => SALIDA~reg0.CLK
+SALIDA << SALIDA~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
